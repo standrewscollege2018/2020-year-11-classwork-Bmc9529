@@ -25,5 +25,8 @@ print("Wrong!", fav_animal, "is nothing compared to the majestic reinturtle")
 print("to have another say enter your credit card details")
 scam = input("Enter your code on the front, Exp. date and the 3 numbers on the back")
 
+print("Haha you have been scamed we are now taking $500")
+print("using this credits info", scam)
+
 
       
