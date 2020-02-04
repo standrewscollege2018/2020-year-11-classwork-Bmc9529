@@ -7,7 +7,7 @@ inpt = input("Do you want to remove GST: ")
 if inpt == "yes":
    item_name = input("Item name?: ")
    item_price = float(input("Item price?: "))
-   print("The", item_name, "will cost","$", item_price / 1.15, "excluding GST")
+   print("The", item_name, "will cost","$", round(item_price / 1.15,2), "excluding GST")
 else:
    #ask for name of item
    itm_name = input("Item name?: ")
@@ -16,4 +16,5 @@ else:
    itm_price = float(input("Item price?: "))
    
    #prints name and price inc of GST
-   print("The car will cost","$", itm_price * 1.15, "including GST")   
+   #if giving 114.99999999 use the round() code then for more dp put a coma after the calc inside brackets with however many Dp you want
+   print("The car will cost","$", round(itm_price * 1.15,2) , "including GST")   
