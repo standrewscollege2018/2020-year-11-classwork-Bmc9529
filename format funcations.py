@@ -10,7 +10,7 @@ gb = float(input("How many Gb: "))
 MB = 1024
 
 #prints the result
-print("There are {}Mb in {}Gb".format(gb * MB, gb))
+print("There are {}Mb in {}Gb".format(round(gb * MB, 2), gb))
                                       
                                       
                                       
