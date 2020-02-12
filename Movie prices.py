@@ -11,7 +11,7 @@ if age >= 13:
     student = input("Are you a student, if so type your email to confirm, else please write 'N/A'\n")
 
 #gap
-if student == "N/A" or age < 13:
+if student == "N/A" or age <= 13:
     if age >= 18:
         print("Tickets are $12")
     elif age >= 13 and age < 18:
