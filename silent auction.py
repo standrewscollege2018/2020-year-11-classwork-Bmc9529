@@ -4,7 +4,8 @@
 keep_betting = True
 keep_start = True
 
-
+#sets other varibles 
+highest_bid = 0
 
 
 
@@ -28,11 +29,33 @@ print()
 
 print("The highest bid so far is $0.00")
 
+#prints a gap
+print()
+
 while keep_betting == True:
     try:
         name = input("What is your name?\n")
         bid = float(input("What is your bid?\n"))
-        if name == "admin"
+        if name == "admin" and bid == -1 and highest_bid >= admin_res:
+            keep_betting = False
+        elif name == "admin" and bid == -1 and  highest_bid <= admin_res:
+            
+        if bid > highest_bid:
+            highest_bid = bid
+            highest_name = name
+            print("highest bid so far is {} with ${}".format(highest_name, highest_bid))
+            #gap
+            print()
+        else:
+            print("Sorry {} Please enter a higher bid".format(name))
+            print("highest bid so far is {} with ${}".format(highest_name, highest_bid))
+    except:
+        print("Please etner a valid bid")
+        
+print()
+print("Thanks for betting. The auction for the {} has finished with a bid of {}".format(admin_auc, highest_bid))
+print("Congrats to", highest_name)
+            
                     
     
     
