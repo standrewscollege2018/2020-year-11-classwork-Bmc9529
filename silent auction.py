@@ -39,7 +39,7 @@ while keep_betting == True:
         if name == "admin" and bid == -1 and highest_bid >= admin_res:
             keep_betting = False
         elif name == "admin" and bid == -1 and  highest_bid <= admin_res:
-            
+            quit()
         if bid > highest_bid:
             highest_bid = bid
             highest_name = name
