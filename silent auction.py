@@ -38,9 +38,13 @@ while keep_betting == True:
         bid = float(input("What is your bid?\n"))
         if name == "admin" and bid == -1 and highest_bid >= admin_res:
             keep_betting = False
+            print()
+            print("Thanks for betting. The auction for the {} has finished with a bid of {}".format(admin_auc, highest_bid))
+            print("Congrats to", highest_name)            
         elif name == "admin" and bid == -1 and  highest_bid <= admin_res:
-            #should stop program
-        if bid > highest_bid:
+            print()
+            print("The auction ended early and was not sold sorry to everyone that betted") 
+        elif bid > highest_bid:
             highest_bid = bid
             highest_name = name
             print("highest bid so far is {} with ${}".format(highest_name, highest_bid))
@@ -52,9 +56,7 @@ while keep_betting == True:
     except:
         print("Please etner a valid bid")
         
-print()
-print("Thanks for betting. The auction for the {} has finished with a bid of {}".format(admin_auc, highest_bid))
-print("Congrats to", highest_name)
+
             
                     
     
