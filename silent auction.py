@@ -44,6 +44,7 @@ while keep_betting == True:
         elif name == "admin" and bid == -1 and  highest_bid <= admin_res:
             print()
             print("The auction ended early and was not sold sorry to everyone that betted") 
+            keep_betting = False
         elif bid > highest_bid:
             highest_bid = bid
             highest_name = name
@@ -55,10 +56,3 @@ while keep_betting == True:
             print("highest bid so far is {} with ${}".format(highest_name, highest_bid))
     except:
         print("Please etner a valid bid")
-        
-
-            
-                    
-    
-    
-        
