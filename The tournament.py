@@ -24,7 +24,7 @@ print()
 #gets oppents from user
 while loop == True:
     A = input("Please enter opponents names:\n")
-    if A == "done":
+    if A == "done" or A == "Done":
         print()
         loop = False
     else:
