@@ -24,7 +24,7 @@ print()
 #gets oppents from user
 while loop == True:
     A = input("Please enter opponents names:\n")
-    if A == "done" or A == "Done":
+    if A.lower() == "done":
         print()
         loop = False
     else:
@@ -46,11 +46,11 @@ while loop == True:
                         print("Please put in a number higher than 0\n")                        
                     elif score_away == score_home:
                         print("You drew\n")
-                        draws += 1
+                        draws += 2
                         loop_in_loop = False
                     elif score_home > score_away:
                         print("You won\n")
-                        wins += 1
+                        wins += 3
                         loop_in_loop = False                        
                     else:
                         print("You lost\n")
