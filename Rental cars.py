@@ -16,8 +16,8 @@ while loop == True:
         seats = int(input("Please enter the number of seats required (type -1 to quit):\n"))
         if seats == -1:
             loop = False
-            exit()
-            quit()
+            exit
+            quit
         print()
         loop = False
     except:
@@ -28,5 +28,14 @@ for b in range(0, 9):
     if cars[b][1] >= seats and cars[b][2] == False:
         print("No.", b + 1, "-", cars[b][0])
 
+#restarts the loop
 loop = True
 
+
+#prints a gap
+print()
+
+
+while loop == True:
+    try:
+        book = int(input(
