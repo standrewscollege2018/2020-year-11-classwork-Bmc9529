@@ -11,29 +11,38 @@ cars = [["Suzuki Van", 2, False], ["Toyota Corlla", 4, False], ["Honda CRV", 4, 
 loop = True
 chungus_loop = True
 
+
+#allows the ablilty to loop through the rental multiple times
 while chungus_loop == True:
     #starts the gui
     loop = True
     while loop == True:
         try:
-            seats = int(input("Please enter the number of seats required (type -1 to quit):\n"))
+            #asks for the amount of seats the user needs
+            seats = int(input("Please enter the number of seats required (type '-1' to quit):\n"))
+            #checks if the user entered the kill command and stops the loops and goes to the bottom
             if seats == -1:
-                loop = False
                 chungus_loop = False
-            print()
-            loop = False
+                break
+            elif seats <= 0:
+                print("Please put in a number greater than 0 as you count as 1") 
+                print()
+            elif seats >= 13:
+                print("Sorry their aren't any cars with more than 12 seats")
+                print()            
+            else:
+                print()
+                loop = False                
         except:
             print("Please enter a valid number")
     
+    #finsihes the full break of the loops
+    if seats == -1:
+        chungus_loop = False
+        break    
     #prints the list of cars the user is able to have
     for b in range(0, 9):
-        if seats <= 0:
-            print("Please put in a number greater than 0 as you count as 1") 
-            print()
-        elif seats >= 13:
-            print("Sorry their aren't any cars with more than 12 seats")
-            print()
-        elif cars[b][1] >= seats and cars[b][2] == False:
+        if cars[b][1] >= seats and cars[b][2] == False:
             print("No.", b + 1, "-", cars[b][0], "with", cars[b][1], "seats")
     
     #restarts the loop
@@ -43,7 +52,7 @@ while chungus_loop == True:
     #prints a gap
     print()
     
-    
+    #starts up another loop to see what car the user would wish to book according to the last loop
     while loop == True:
         try:
             book = int(input("Please enter the a number according to what car you wish to book:\n"))
@@ -65,6 +74,7 @@ while chungus_loop == True:
         except:
             print("Please select a valid number") 
 
+#this is after the chungus_loop and will print to the admin after they enter the finish command and tell them which vehicles have been borrowed 
 print()
 print("Vehicles booked today:")
 for i in range(0, 9):
