@@ -4,7 +4,10 @@ car = ["Renault", 15000]
 cars.append(car)
 print(cars)"""
 
+#check for symbols lines of code
 
+chars = set('0123456789$,!@#%^&*()`~":;/?.{}><_+=[]\|')
+keep_asking = True
 
 #starts the program
 cars = [["Suzuki Van", 2, False], ["Toyota Corlla", 4, False], ["Honda CRV", 4, False], ["Suzuki Swift", 4, False], ["Mitsibishi Airtrek", 4, False], ["Nissan DC Ute", 4, False], ["Toyota Previa", 7, False], ["Toyota High Ace", 12, False], ["Toyota High Ace", 12, False]]
@@ -43,6 +46,7 @@ while chungus_loop == True:
     #prints the list of cars the user is able to have
     for b in range(0, 9):
         if cars[b][1] >= seats and cars[b][2] == False:
+            
             print("No.", b + 1, "-", cars[b][0], "with", cars[b][1], "seats")
     
     #restarts the loop
@@ -66,11 +70,19 @@ while chungus_loop == True:
                 print("Sorry but that car is already booked")
                 print()
             else: 
-                cars[book - 1][2] = True
                 name = input("What is your name:\n")
-                cars[book - 1].append(name)
-                print(cars[book - 1][0], "has been booked by", name)
-                loop = False
+                if name == "" or name == " " or name == "  " or name == "   ":
+                    print("Sorry that was not a name")
+                elif any((c in chars) for c in name):
+                    print("Enter a valid name")
+                else:
+                    if cars[book - 1][1] >= seats and cars[book - 1][2] == False:
+                        cars[book - 1].append(name)
+                        print(cars[book - 1][0], "has been booked by", name)
+                        cars[book - 1][2] = True
+                        loop = False      
+                    else:
+                        print("Fucking moron trying to break my code try again hahahhahahaha")
         except:
             print("Please select a valid number") 
 
