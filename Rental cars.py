@@ -62,7 +62,7 @@ while chungus_loop == True:
             elif book < 1:
                 print("Sorry we don't have less than 1 car you egg")
                 print()
-            elif cars[book][2] == True:
+            elif cars[book - 1][2] == True:
                 print("Sorry but that car is already booked")
                 print()
             else: 
